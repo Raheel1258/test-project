@@ -9,4 +9,9 @@ const ImportantTag = styled.span`
   color: red;
 `;
 
-export { Label, ImportantTag };
+const ErrorField = styled.div `
+color: red;
+font-size:10px
+`
+
+export { Label, ImportantTag,ErrorField };

@@ -9,5 +9,9 @@ padding-bottom: 13px;
 const ImportantTag = styled.span`
     color:red;
 `
+const ErrorField = styled.div`
+color:red;
+font-size:10px
+`
 
-export {Label,ImportantTag };
+export {Label,ImportantTag,ErrorField };

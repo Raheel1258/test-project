@@ -1,9 +1,14 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-import { Label, ImportantTag } from "./style";
+import { Label, ImportantTag, ErrorField } from "./style";
 
-const CustomSelect = ({ labelTitle, optionsData, handleChangeSelect }) => {
+const CustomSelect = ({
+  labelTitle,
+  optionsData,
+  handleChangeSelect,
+  errors,
+}) => {
   return (
     <div>
       <Label>
@@ -19,6 +24,12 @@ const CustomSelect = ({ labelTitle, optionsData, handleChangeSelect }) => {
           <option key={index}>{option}</option>
         ))}
       </Form.Control>
+      {errors &&
+        errors.map((error) =>
+          error == labelTitle.toLowerCase() ? (
+            <ErrorField key={error}>Please fill the field</ErrorField>
+          ) : null
+        )}
     </div>
   );
 };

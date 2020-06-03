@@ -4,7 +4,17 @@ import { MainContainer } from "./style";
 class MyBatch extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      batchName: "",
+      Image: "",
+      category: "",
+      details: "",
+      from: "",
+      sessions: "",
+      subject: "",
+      to: "",
+      errors: [],
+    };
   }
 
   handleChange = (e) => {
@@ -25,12 +35,25 @@ class MyBatch extends Component {
     });
   };
 
+  validateErrors = () => {
+    const errors = [];
+    Object.entries(this.state).map((key) => {
+      if (key[1].length > 0) {
+      } else {
+        errors.push(key[0]);
+      }
+    });
+    this.setState({
+      errors: errors,
+    });
+  };
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    this.validateErrors();
   };
 
   render() {
+    const { errors } = this.state;
     return (
       <MainContainer>
         <BatchDetails
@@ -38,6 +61,7 @@ class MyBatch extends Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
           handleChangeSelect={this.handleChangeSelect}
+          errors={errors}
         />
       </MainContainer>
     );

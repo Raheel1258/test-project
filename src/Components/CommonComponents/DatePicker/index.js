@@ -5,7 +5,7 @@ import DayPickerInput from "react-day-picker/DayPickerInput";
 import "react-day-picker/lib/style.css";
 import { Label, ImportantTag } from "./style";
 
-const CustomDatePicker = ({ labelTitle }) => {
+const CustomDatePicker = ({ labelTitle, handleDateChange }) => {
   return (
     <Col md={6}>
       <Form.Group style={{ marginTop: "13px" }}>
@@ -14,6 +14,7 @@ const CustomDatePicker = ({ labelTitle }) => {
           <ImportantTag>*</ImportantTag>
         </Label>
         <DayPickerInput
+          onDayChange={(day) => handleDateChange(labelTitle.toLowerCase(), day)}
           style={{ width: "100%" }}
           inputProps={{ className: "form-control col-md-12" }}
         />

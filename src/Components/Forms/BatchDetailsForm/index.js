@@ -16,7 +16,7 @@ import {
   CustomDatePicker,
 } from "../../CommonComponents";
 
-const BatchDetails = () => {
+const BatchDetails = ({ handleChange, handleDateChange,handleChangeSelect, handleSubmit}) => {
   return (
     <MainFormContainer>
       <Row>
@@ -25,15 +25,17 @@ const BatchDetails = () => {
             <Col md={6}>
               <CustomInput
                 labelTitle="BATCH NAME"
-                name="batchName"
+                name="Image"
                 type="email"
-                placeholder="rahilahmad1258"
+                onChange={handleChange}
+                placeholder="rahilahmad1258@gmail.com"
               />
             </Col>
             <Col md={6}>
               <CustomSelect
                 labelTitle="CATEGORY"
                 optionsData={["Delhi", "Mumbai", "Goa"]}
+                handleChangeSelect={handleChangeSelect}
               />
             </Col>
             <MediaQuery maxDeviceWidth={767}>
@@ -43,6 +45,7 @@ const BatchDetails = () => {
                     <UploadInput
                       accept="image/x-png,image/gif,image/jpeg"
                       type="file"
+                      onChange={handleChange}
                     />
                   </UploadFile>
                   <UploadTitle>Upload Image</UploadTitle>
@@ -51,29 +54,45 @@ const BatchDetails = () => {
             </MediaQuery>
           </Row>
           <Row md={12}>
-            <CustomDatePicker labelTitle="TO" />
+            <CustomDatePicker
+              handleDateChange={handleDateChange}
+              labelTitle="TO"
+            />
             <Col md={6}>
               <CustomInput
                 labelTitle="SUBJECT"
                 name="subject"
+                onChange={handleChange}
                 placeholder="ADDRESS"
               />
             </Col>
           </Row>
           <Row md={12}>
-            <CustomDatePicker labelTitle="FROM" />
+            <CustomDatePicker
+              handleDateChange={handleDateChange}
+              labelTitle="FROM"
+            />
             <Col md={6} xl={4}>
-              <CustomInput labelTitle="NO OF LIVES SESSIONS" type="number" />
+              <CustomInput
+                onChange={handleChange}
+                labelTitle="NO OF LIVES SESSIONS"
+                name="sessions"
+                type="number"
+              />
             </Col>
           </Row>
           <Row md={12}>
             <Col md={12}>
-              <CustomTextArea labelTitle="Details" name="subject" />
+              <CustomTextArea
+                onChange={handleChange}
+                labelTitle="Details"
+                name="details"
+              />
             </Col>
           </Row>
           <Row>
             <Col md={8}>
-              <CustomButton labelTitle="SAVE AND CONTINUE" />
+              <CustomButton handleSubmit={handleSubmit} labelTitle="SAVE AND CONTINUE" />
             </Col>
           </Row>
         </Col>
@@ -84,6 +103,7 @@ const BatchDetails = () => {
                 <UploadInput
                   accept="image/x-png,image/gif,image/jpeg"
                   type="file"
+                  onChange={handleChange}
                 />
               </UploadFile>
               <UploadTitle>Upload Image</UploadTitle>

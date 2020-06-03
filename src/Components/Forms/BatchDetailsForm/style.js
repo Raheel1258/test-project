@@ -27,14 +27,14 @@ const UploadInput = styled.input`
 const UploadTitle = styled.div`
   padding-left: 20px;
   padding-right: 20px;
+  color: gray;
   @media (max-width: 767px) {
-   text-align:center;
+    text-align: center;
   }
 `;
 
 const UploadContainer = styled.div`
   margin-top: 50px;
-
 `;
 export {
   MainFormContainer,

@@ -1,9 +1,9 @@
 import React from "react";
-import { MainButtonContainer,Label } from "./style";
+import { MainButtonContainer, Label } from "./style";
 
-const CustomButton = ({ labelTitle }) => {
+const CustomButton = ({ labelTitle, handleSubmit }) => {
   return (
-    <MainButtonContainer>
+    <MainButtonContainer onClick={handleSubmit}>
       <Label>{labelTitle}</Label>
     </MainButtonContainer>
   );

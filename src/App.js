@@ -1,11 +1,12 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import 'react-day-picker/lib/style.css';
+import "./App.css";
+import { MyBatch } from "./Containers";
 function App() {
   return (
-    <div className="App">
-      
+    <div>
+      <MyBatch />
     </div>
   );
 }

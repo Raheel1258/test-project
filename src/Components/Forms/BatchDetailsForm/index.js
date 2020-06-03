@@ -8,13 +8,12 @@ import {
   UploadTitle,
   UploadContainer,
 } from "./style";
-// import DayPickerInput from "react-day-picker/DayPickerInput";
-
 import {
   CustomInput,
   CustomSelect,
   CustomTextArea,
   CustomButton,
+  CustomDatePicker,
 } from "../../CommonComponents";
 class BatchDetails extends Component {
   render() {
@@ -52,9 +51,7 @@ class BatchDetails extends Component {
               </MediaQuery>
             </Row>
             <Row md={12}>
-              <Col md={6}>
-                <CustomInput labelTitle="FROM" name="from" />
-              </Col>
+              <CustomDatePicker labelTitle="TO" />
               <Col md={6}>
                 <CustomInput
                   labelTitle="SUBJECT"
@@ -64,9 +61,7 @@ class BatchDetails extends Component {
               </Col>
             </Row>
             <Row md={12}>
-              <Col md={6}>
-                <CustomInput labelTitle="TO" name="subject" />
-              </Col>
+              <CustomDatePicker labelTitle="FROM" />
               <Col md={6} xl={4}>
                 <CustomInput labelTitle="NO OF LIVES SESSIONS" type="number" />
               </Col>

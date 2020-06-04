@@ -38,7 +38,7 @@ class MyBatch extends Component {
   validateErrors = () => {
     const errors = [];
     Object.entries(this.state).map((key) => {
-      if (key[1].length > 0) {
+      if (key[1].length > 0 || typeof key[1] === "object") {
       } else {
         errors.push(key[0]);
       }
@@ -47,9 +47,11 @@ class MyBatch extends Component {
       errors: errors,
     });
   };
+
   handleSubmit = (e) => {
     e.preventDefault();
     this.validateErrors();
+    console.log(this.state);
   };
 
   render() {

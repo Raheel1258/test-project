@@ -31,7 +31,7 @@ const BatchDetails = ({
             <Col md={6}>
               <CustomInput
                 labelTitle="BATCH NAME"
-                name="Image"
+                name="batchName"
                 type="email"
                 onChange={handleChange}
                 placeholder="rahilahmad1258@gmail.com"

@@ -1,6 +1,6 @@
 import React from "react";
 import { Form } from "react-bootstrap";
-import { MainInputContainer, Label, ImportantTag, ErrorField } from "./style";
+import { MainInputContainer, Label, ImportantTag, ErrorField, n } from "./style";
 
 const CustomInput = ({
   labelTitle,
@@ -17,7 +17,7 @@ const CustomInput = ({
         <ImportantTag>*</ImportantTag>
       </Label>
       <Form.Control
-        onChange={(e) => onChange(name, e)}
+        onChange={onChange}
         name={name}
         type={type}
         placeholder={placeholder}
